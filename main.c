@@ -7,7 +7,7 @@ int main() {
   struct dirent *data;
   struct stat space;
   DIR *d;
-  unsigned_int n;
+  unsigned int n;
   n = 0;
   d = opendir("./");
   printf("Statistics for directory: ./\n");
