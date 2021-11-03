@@ -16,7 +16,7 @@ int main() {
   while(data) {
     stat(data->d_name, &space);
     n += space.st_size;
-    readdir(d);
+    data = readdir(d);
   }
   printf("Total Directory Size: %d\n", n);
 
@@ -29,7 +29,7 @@ int main() {
     if(data->d_type == DT_DIR) {
       printf("%s \n", data->d_name);
     }
-    readdir(d);
+    data = readdir(d);
   }
 
   rewinddir(d);
@@ -41,7 +41,7 @@ int main() {
     if(data->d_type != DT_DIR) {
       printf("%s \n", data->d_name);
     }
-    readdir(d);
+    data = readdir(d);
   }
 
   return 0;
