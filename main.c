@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
     // if (newline != NULL) {
     //   newline = '\0';
     // }
-    d = opendir(argv[1]);
+    d = opendir(sub);
     if(errno) {
       printf("%s\n",strerror(errno));
       return -1;
