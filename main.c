@@ -14,9 +14,9 @@ int main(int argc, char *argv[]) {
   char sub[100];
   if(argc > 1) {
     d = opendir(argv[1]);
-    if(errno) {
+    if(errno != 0) {
       printf("%s\n", strerror(errno));
-      return -1;
+      return 0;
     }
   } else {
     printf("Provide a Directory: ");
@@ -26,10 +26,10 @@ int main(int argc, char *argv[]) {
     if (newline != NULL) {
       newline = '\0';
     }
-    d = opendir(sub);
-    if(errno) {
+    d = opendir(argv[1]);
+    if(errno != 0) {
       printf("%s\n",strerror(errno));
-      return -1;
+      return 0;
     }
   }
 
