@@ -3,11 +3,30 @@
 #include <sys/stat.h>
 #include <dirent.h>
 
-int main() {
+int main(int argc, char *argv[]) {
   struct dirent *data;
   struct stat space;
   DIR *d;
   unsigned int n;
+
+  char sub[100];
+  if(argc > 1) {
+    d = opendir(argv[1]);
+    if(errno) {
+      printf("%s\n", strerror(errno));
+    }
+  } else {
+    printf("Provide a Directory: ");
+    read(STDIN_FILENO, sub, sizeof(sub));
+    d = opendir(argv[1]);
+    if(errno) {
+      printf("%s\n",strerror(errno));
+    }
+  }
+
+
+
+
   n = 0;
   d = opendir("./");
   printf("Statistics for directory: ./\n");
