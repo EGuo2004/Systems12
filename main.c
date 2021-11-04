@@ -21,11 +21,11 @@ int main(int argc, char *argv[]) {
   } else {
     printf("Provide a Directory: ");
     read(STDIN_FILENO, sub, sizeof(sub));
-    char *newline;
-    newline = strrchr(sub,'\n');
-    if (newline != NULL) {
-      newline = '\0';
-    }
+    // char *newline;
+    // newline = strrchr(sub,'\n');
+    // if (newline != NULL) {
+    //   newline = '\0';
+    // }
     d = opendir(argv[1]);
     if(errno) {
       printf("%s\n",strerror(errno));
