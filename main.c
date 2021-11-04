@@ -14,13 +14,20 @@ int main(int argc, char *argv[]) {
     d = opendir(argv[1]);
     if(errno) {
       printf("%s\n", strerror(errno));
+      return -1;
     }
   } else {
     printf("Provide a Directory: ");
     read(STDIN_FILENO, sub, sizeof(sub));
-    d = opendir(argv[1]);
+    char *newline;
+    newline = strrchr(sub,'\n');
+    if (newline != NULL) {
+      newline = '\0';
+    }
+    d = opendir(sub);
     if(errno) {
       printf("%s\n",strerror(errno));
+      return -1;
     }
   }
 
