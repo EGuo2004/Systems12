@@ -35,7 +35,6 @@ int main(int argc, char *argv[]) {
 
 
   n = 0;
-  d = opendir("./");
   printf("Statistics for directory: ./\n");
 
   data = readdir(d);
