@@ -4,7 +4,7 @@
 #include <dirent.h>
 #include <errno.h>
 #include <string.h>
-
+#include <unistd.h>
 int main(int argc, char *argv[]) {
   struct dirent *data;
   struct stat space;
