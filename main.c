@@ -20,11 +20,11 @@ int main(int argc, char *argv[]) {
     }
   } else {
     printf("Provide a Directory: ");
-     scanf("%s",dir);
+     scanf("%s",sub);
     d = opendir(sub);
     if(d < 0) {
       printf("Error %d: %s\n", errno, strerror(errno));
-      return 0;
+      return -1;
     }
   }
 
