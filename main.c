@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <sys/stat.h>
 #include <dirent.h>
+#include <errno.h>
+#include <string.h>
 
 int main(int argc, char *argv[]) {
   struct dirent *data;
