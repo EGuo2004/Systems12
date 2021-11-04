@@ -20,20 +20,13 @@ int main(int argc, char *argv[]) {
     }
   } else {
     printf("Provide a Directory: ");
-    read(STDIN_FILENO, sub, sizeof(sub));
-    // char *newline;
-    // newline = strrchr(sub,'\n');
-    // if (newline != NULL) {
-    //   newline = '\0';
-    // }
-    d = opendir(argv[1]);
-    if(errno) {
-      printf("%s\n",strerror(errno));
-      return -1;
+     scanf("%s",dir);
+    d = opendir(sub);
+    if(d < 0) {
+      printf("Error %d: %s\n", errno, strerror(errno));
+      return 0;
     }
   }
-
-
 
 
   n = 0;
